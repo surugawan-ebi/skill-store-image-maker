@@ -1,8 +1,8 @@
 # Export Manifest
 
-| File | Store | Dimensions | Source gameplay | Copy | Prompt reference | QA status | Notes |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-|  |  |  |  |  |  |  |  |
+| File | Store | Dimensions | Source gameplay | Fit method | Copy | Prompt reference | QA status | Notes |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+|  |  |  |  |  |  |  |  |  |
 
 ## Batch Notes
 

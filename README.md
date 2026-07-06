@@ -19,6 +19,7 @@ game-store-image-maker/
 - Produces per-image art direction, copy, prompts, and negative prompts.
 - Keeps production work editable with a `materials/`, `working/`, and `exports/` project structure.
 - Includes platform guardrails for App Store and Google Play image assets.
+- Handles source/export size mismatches with a canvas-first layout: create the target-size background first, then place gameplay captures on top without distortion.
 
 The skill is designed to avoid common store-image failures: fake gameplay, unsupported claims, tiny unreadable text, copied competitor layouts, misleading rewards, and generic device mockup templates.
 

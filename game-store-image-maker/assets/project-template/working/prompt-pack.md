@@ -14,6 +14,8 @@
 - Goal:
 - Base image:
 - Canvas:
+- Background canvas:
+- Fit method: contain-on-canvas
 - Copy:
 - Preserve:
 - May enhance:

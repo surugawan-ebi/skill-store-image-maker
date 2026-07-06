@@ -45,6 +45,7 @@ Turn a game brief plus base gameplay images into store-listing visuals that make
 - Keep store visuals legible at phone thumbnail size. Fine detail, tiny text, and busy backgrounds usually fail.
 - Avoid generic device mockup templates unless they clarify the game. For Google Play games, prioritize actual in-game experience.
 - If using AI image generation, preserve gameplay accuracy and use the provided captures as the visual source of truth.
+- When source images and export sizes differ, create the target-size canvas first, fill it with a simple brand-colored background, then place the source gameplay image on top without distortion. Use padding, background extension, or designed empty space before cropping key gameplay UI.
 
 ## Screenshot Sequence
 
@@ -72,6 +73,7 @@ For each image-generation prompt, include:
 
 - target canvas and platform
 - exact base image(s) to preserve
+- size-fitting method: contain-on-canvas, safe crop, same-ratio scale, or background extension
 - foreground gameplay moment
 - background treatment
 - typography text and placement

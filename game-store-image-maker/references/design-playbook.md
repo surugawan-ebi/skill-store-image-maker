@@ -63,6 +63,45 @@ Copy angles: "小さな物語を集める", "自分だけの部屋へ", "癒や�
 
 ## Composition Patterns
 
+### Canvas-First Size Fitting
+
+When a source gameplay image does not match the required store size, use a target-size canvas first. This is the default store-image treatment.
+
+Default process:
+
+1. Create a blank target canvas at the export size.
+2. Fill the canvas with a simple background from the app icon, UI palette, or game world.
+3. Place the gameplay capture on top as the accurate source of truth.
+4. Scale the gameplay capture proportionally. Never stretch it.
+5. Use the remaining space for headline copy, simple shapes, character art, item art, or soft background extension.
+6. Crop only when the cropped area is nonessential and no key UI, player action, character, board state, score, or reward is lost.
+
+Preferred fit methods:
+
+| Method | Use when | Treatment |
+| --- | --- | --- |
+| `contain-on-canvas` | Aspect ratio differs or key UI must stay visible | Scale the full capture to fit inside the canvas; use brand background and copy to fill extra space |
+| `same-ratio-scale` | Source and target share the same aspect ratio | Scale proportionally to the final size |
+| `safe-crop` | Source has extra nonessential edges | Crop only background or dead UI margins; document the crop in QA |
+| `background-extension` | The capture needs a full-bleed store feel | Extend colors, scenery, patterns, or blurred game-world motifs behind the preserved capture |
+
+Avoid:
+
+- non-uniform scaling
+- cropping the main mechanic
+- cropping readable game UI needed to understand play
+- stretching characters, boards, icons, or typography
+- using black bars unless intentionally part of the design
+- filling space with unrelated stock art
+
+For portrait screenshots, a common treatment is a solid or lightly textured brand-color canvas with the gameplay capture centered in a phone-like frame or rounded panel, plus one large caption above or below. For Google Play feature graphics, avoid tiny full-screen UI; use a wider brand canvas, a cropped-but-accurate gameplay moment, and one clear visual hook.
+
+Prompt skeleton:
+
+```text
+Create a [target size] [store/platform] image using a canvas-first layout. Fill the full canvas with a simple [brand color / game world color] background. Place [base image] on top as the preserved gameplay layer, scaled proportionally with no stretching. Use [contain-on-canvas / same-ratio-scale / safe-crop / background-extension]. Keep [key UI/mechanic] fully visible. Add the headline "[copy]" in large readable type in the empty canvas space. Use only subtle accents from the game UI. Do not invent gameplay, rewards, rankings, badges, or characters.
+```
+
 ### Gameplay Hero
 
 Use one real screenshot as the center. Add a large caption above or below, then a small controlled effect that points to the action. Best when the gameplay is visually self-explanatory.
@@ -118,6 +157,7 @@ For each asset, output:
 - Goal:
 - Base image:
 - Canvas:
+- Fit method:
 - Copy:
 - Composition:
 - Style:
@@ -144,6 +184,8 @@ fake gameplay, fake UI, unreadable text, tiny captions, copied competitor layout
 - Is overlay text readable at thumbnail size?
 - Is the text short enough for localization?
 - Is gameplay still visible after decoration?
+- If the source and export sizes differ, was the gameplay placed proportionally on a target-size canvas without distortion?
+- Are key UI and mechanics preserved after any crop or background extension?
 - Are icon, UI, and store images visually connected?
 - Are forbidden ranking, price, promo, testimonial, or CTA claims absent?
 - Are competitor characters, layouts, and taglines avoided?

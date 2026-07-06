@@ -74,4 +74,17 @@ Use these when the user has no production target yet:
 | App Store iPhone production portrait | Start with 1290x2796 or 1320x2868 if supported by the asset pipeline |
 | Text coverage | Keep overlays under 20% when Google Play is in scope |
 
+## Size Mismatch Policy
+
+When the source image does not match the final store size, default to a canvas-first composition:
+
+1. Create the exact target-size canvas.
+2. Fill the canvas with a simple brand or game-world background.
+3. Place the source gameplay image on top and scale it proportionally.
+4. Use empty space for short copy, visual accents, or background extension.
+5. Do not stretch gameplay, UI, characters, icons, or text.
+6. Do not crop key gameplay UI unless the user explicitly approves or the crop is clearly safe.
+
+Use `contain-on-canvas` for most portrait-to-feature-graphic, landscape-to-portrait, and odd-ratio source images. Use `same-ratio-scale` only when the source and target share the same ratio. Use `safe-crop` only for nonessential edges.
+
 Always preserve a clean gameplay capture separately. Do not flatten the only source file with captions.
