@@ -8,5 +8,6 @@
 
 - Created:
 - Store targets:
+- Social targets:
 - Locales:
 - Remaining manual checks:

@@ -1,6 +1,6 @@
 ---
 name: game-store-image-maker
-description: Create App Store and Google Play promotional images for mobile game listings, including screenshot sets, feature graphics, creative direction, Japanese/English taglines, ASO-oriented shot plans, and image-generation prompts from gameplay captures, app icons, brand assets, and game briefs. Use when Codex or Claude needs to plan, critique, generate, localize, or QA mobile game store visuals while respecting store asset requirements and avoiding misleading or competitor-copying designs.
+description: Create App Store, Google Play, and Instagram promotional images for mobile games, including store screenshot sets, feature graphics, social feed posts, Stories/Reels creatives, creative direction, Japanese/English taglines, ASO/social shot plans, and image-generation prompts from gameplay captures, app icons, brand assets, and game briefs. Use when Codex or Claude needs to plan, critique, generate, localize, or QA mobile game promo visuals while respecting platform asset requirements and avoiding misleading or competitor-copying designs.
 ---
 
 # Game Store Image Maker
@@ -13,7 +13,7 @@ Turn a game brief plus base gameplay images into store-listing visuals that make
 
 1. Create or identify the project workspace. Use `references/project-workflow.md` and, when useful, copy `assets/project-template/` so source inputs, working drafts, and exports stay separate.
 2. Collect inputs. If the user has not provided enough detail, use `references/input-brief-template.md` as the intake format and save the completed brief under `materials/`.
-3. Identify the target deliverable: App Store screenshots, Google Play screenshots, Google Play feature graphic, cross-store concept board, prompt pack, localization pass, or QA review.
+3. Identify the target deliverable: App Store screenshots, Google Play screenshots, Google Play feature graphic, Instagram feed post, Instagram Story/Reel creative, cross-platform concept board, prompt pack, localization pass, or QA review.
 4. If output dimensions, upload readiness, or platform compliance matters, read `references/store-asset-specs.md`. For production upload work, verify the latest official Apple and Google specs before final export.
 5. Analyze the base images and brief internally:
    - genre, camera, core loop, win condition, progression, player fantasy
@@ -60,7 +60,7 @@ Default sequence for a 5-8 image set:
 7. Social or competitive proof, only if truly in the game.
 8. World/brand closer: a memorable scene that reinforces the icon and store identity.
 
-For 3 images, use Hook / Core Loop / Differentiator. For a single feature graphic, compress the hook and differentiator into one clean scene without small UI.
+For 3 images, use Hook / Core Loop / Differentiator. For a single feature graphic or Instagram post, compress the hook and differentiator into one clean scene without small UI.
 
 ## Output Format
 

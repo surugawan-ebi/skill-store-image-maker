@@ -28,6 +28,9 @@
 - App Store screenshots:
 - Google Play screenshots:
 - Google Play feature graphic:
+- Instagram feed posts:
+- Instagram carousel slides:
+- Instagram Stories/Reels:
 - App preview poster frame:
 - Export formats:
 

@@ -128,6 +128,25 @@ Use character art to draw attention, but keep the in-game screen visible enough 
 
 Use fewer words and larger shapes than screenshots. The feature graphic often appears with overlays or video controls, so keep the center/focal area clean and avoid tiny gameplay UI. It should feel like an extension of the icon and game world, not a duplicate of the icon.
 
+### Instagram App Promo
+
+Instagram creatives can be more campaign-like than store screenshots, but they should still prove the game experience.
+
+Default approaches:
+
+- `1080x1350` feed post: use a brand-color canvas, a large gameplay capture or character+gameplay composition, one strong Japanese hook, and a small app icon/title lockup.
+- `1080x1350` carousel: slide 1 hook, slide 2 gameplay action, slide 3 differentiator/reward, optional final slide for release/update notice.
+- `1080x1920` Story/Reel: use a vertical canvas with gameplay centered, title and hook in the middle-safe area, and leave top/bottom space for Instagram UI.
+- `1080x1080` square: use when the user needs conservative feed/grid reuse.
+
+App-promo copy can be slightly more direct than store screenshots, but avoid unsupported claims. For organic posts, CTA copy is acceptable when requested; for paid placements, ask whether the creative is an ad and verify Meta policy before final export.
+
+Prompt skeleton:
+
+```text
+Create a [1080x1350 / 1080x1920 / 1080x1080] Instagram app-promo creative for [game title]. Use a canvas-first layout with a [brand color] background. Place [base gameplay image] as an accurate gameplay layer, scaled proportionally with no distortion. Add [app icon/logo] as a small title lockup. Use one large readable Japanese hook: "[copy]". Make the image feel like a polished mobile game launch/update post while preserving true gameplay. Do not invent rankings, reviews, store badges, fake UI, or unsupported rewards.
+```
+
 ## Japanese Copy Rules
 
 - Use short action verbs and concrete nouns.
@@ -188,5 +207,6 @@ fake gameplay, fake UI, unreadable text, tiny captions, copied competitor layout
 - Are key UI and mechanics preserved after any crop or background extension?
 - Are icon, UI, and store images visually connected?
 - Are forbidden ranking, price, promo, testimonial, or CTA claims absent?
+- If this is for Instagram, is the format chosen deliberately: feed `1080x1350`, square `1080x1080`, or Story/Reel `1080x1920`?
 - Are competitor characters, layouts, and taglines avoided?
 - Are source captures preserved separately from edited exports?

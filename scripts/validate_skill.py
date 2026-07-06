@@ -24,6 +24,12 @@ REQUIRED_TEMPLATE_FILES = [
     "assets/project-template/working/qa-notes.md",
     "assets/project-template/exports/manifest.md",
 ]
+EXPECTED_TERMS = [
+    "Instagram",
+    "1080x1350",
+    "1080x1920",
+    "contain-on-canvas",
+]
 
 
 def parse_simple_frontmatter(text: str) -> dict[str, str]:
@@ -88,6 +94,16 @@ def validate_skill(skill_dir: Path) -> list[str]:
     for relative_path in REQUIRED_TEMPLATE_FILES:
         if not (skill_dir / relative_path).exists():
             errors.append(f"Missing project template file: {relative_path}")
+
+    combined_text = text + "\n"
+    for relative_path in REQUIRED_REFERENCES:
+        reference_file = skill_dir / relative_path
+        if reference_file.exists():
+            combined_text += reference_file.read_text(encoding="utf-8") + "\n"
+
+    for term in EXPECTED_TERMS:
+        if term not in combined_text:
+            errors.append(f"Expected skill guidance to mention: {term}")
 
     if not openai_yaml.exists():
         errors.append("Missing agents/openai.yaml")

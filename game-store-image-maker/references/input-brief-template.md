@@ -33,6 +33,7 @@ Use this template when the user asks what information is needed, or when a store
 - Number of screenshots:
 - Feature graphic needed: yes / no
 - App preview video cover needed: yes / no
+- Instagram promo needed: feed / carousel / story / reel / no
 - Desired sizes, if known:
 
 ## Copy
@@ -125,6 +126,9 @@ Useful captures:
 - App Store screenshots:
 - Google Play screenshots:
 - Google Play feature graphic:
+- Instagram feed posts:
+- Instagram carousel slides:
+- Instagram Stories/Reels:
 - App preview poster frame:
 - Aspect ratios:
 - Export format:

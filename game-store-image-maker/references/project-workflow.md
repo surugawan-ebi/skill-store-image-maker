@@ -23,6 +23,7 @@ Use a project folder whenever the user wants editable, repeatable store-image pr
   exports/
     app-store/
     google-play/
+    instagram/
     manifest.md
 ```
 
@@ -80,6 +81,7 @@ Every export batch should include:
 Create it when the user asks to:
 
 - make multiple App Store or Google Play images
+- make Instagram feed, carousel, Story, or Reel promo images
 - iterate on visual direction
 - keep prompts and copy editable
 - create upload-ready exports

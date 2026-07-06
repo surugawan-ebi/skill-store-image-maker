@@ -1,6 +1,6 @@
 # Game Store Image Maker Skill
 
-Create App Store and Google Play promotional image plans for mobile games, including screenshot sequences, Google Play feature graphics, Japanese/English copy, editable prompt packs, and QA checklists.
+Create App Store, Google Play, and Instagram promotional image plans for mobile games, including screenshot sequences, Google Play feature graphics, Instagram feed/Story/Reel creatives, Japanese/English copy, editable prompt packs, and QA checklists.
 
 This repository contains a portable Codex/Claude-style skill:
 
@@ -15,6 +15,7 @@ game-store-image-maker/
 ## What This Skill Does
 
 - Turns gameplay captures, app icons, and a game brief into store screenshot concepts.
+- Plans Instagram app-promo images for feed posts, carousels, Stories, and Reels.
 - Plans the first three screenshots as a mini-funnel: hook, core loop, differentiator.
 - Produces per-image art direction, copy, prompts, and negative prompts.
 - Keeps production work editable with a `materials/`, `working/`, and `exports/` project structure.

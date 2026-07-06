@@ -1,4 +1,4 @@
 interface:
   display_name: "Game Store Image Maker"
-  short_description: "Create App Store and Google Play game visuals"
-  default_prompt: "Use $game-store-image-maker to create store screenshot concepts and image prompts for my game."
+  short_description: "Create store and Instagram game visuals"
+  default_prompt: "Use $game-store-image-maker to create App Store, Google Play, and Instagram promo image concepts for my game."
