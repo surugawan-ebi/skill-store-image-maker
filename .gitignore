@@ -1,0 +1,19 @@
+.DS_Store
+Thumbs.db
+
+# Local/generated working folders at repository root
+/*-store-images/
+/working/
+/drafts/
+/exports/*.png
+/exports/*.jpg
+/exports/*.jpeg
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Editor
+.idea/
+.vscode/
