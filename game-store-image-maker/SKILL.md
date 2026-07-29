@@ -33,9 +33,11 @@ Turn a game brief plus base gameplay images into store-listing visuals that make
    - image-generation prompt and negative prompt
    - copy/tagline options
    - QA checklist
+8. For every new or edited raster deliverable, use ImageGen. If ImageGen is unavailable, stop after producing the editable plan and prompt pack. Do not use PIL, canvas scripts, SVG rasterization, or another image generator as a replacement final-render path. Unchanged existing captures and previously approved exports may still be copied for documentation or handoff.
 
 ## Creative Rules
 
+- Use ImageGen for all new or edited raster store and social assets. ImageGen unavailability is a blocker for raster output, not permission to switch generators.
 - Make the game screen the hero. Use generated art, effects, characters, or props only to frame or amplify true gameplay.
 - Do not create fake gameplay, fake UI, fake rewards, fake rankings, or unsupported social proof.
 - Do not copy competitor screenshots, captions, characters, UI, or composition. Borrow only category-level patterns.
@@ -44,7 +46,7 @@ Turn a game brief plus base gameplay images into store-listing visuals that make
 - Treat the first three screenshots as a connected mini-funnel, not isolated posters.
 - Keep store visuals legible at phone thumbnail size. Fine detail, tiny text, and busy backgrounds usually fail.
 - Avoid generic device mockup templates unless they clarify the game. For Google Play games, prioritize actual in-game experience.
-- If using AI image generation, preserve gameplay accuracy and use the provided captures as the visual source of truth.
+- When using ImageGen, preserve gameplay accuracy and use the provided captures as the visual source of truth.
 - When source images and export sizes differ, create the target-size canvas first, fill it with a simple brand-colored background, then place the source gameplay image on top without distortion. Use padding, background extension, or designed empty space before cropping key gameplay UI.
 
 ## Screenshot Sequence

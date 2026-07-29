@@ -24,6 +24,20 @@ game-store-image-maker/
 
 The skill is designed to avoid common store-image failures: fake gameplay, unsupported claims, tiny unreadable text, copied competitor layouts, misleading rewards, and generic device mockup templates.
 
+## Real Project Example
+
+[`examples/minicalog/`](./examples/minicalog/) contains a documented case study built from real Minicalog app captures. It includes the source screenshots, brief, shot plan, copy bank, ImageGen prompt pack, QA notes, and selected App Store / Google Play / Instagram results.
+
+| Source capture | Store result |
+| --- | --- |
+| ![Minicalog collection source capture](./examples/minicalog/materials/source/gameplay/02-grid-collection.jpg) | ![Minicalog App Store hook image](./examples/minicalog/exports/app-store/01-hook.jpg) |
+
+The example demonstrates the intended boundary: the app screenshot remains the source of truth, while the surrounding composition explains the product promise without inventing UI or features. The bundled images are documentation examples, not reusable stock assets; see the [asset notice](./examples/minicalog/ASSET-NOTICE.md).
+
+## Raster Asset Policy
+
+Use ImageGen for every new or edited raster deliverable. If ImageGen is unavailable, stop after the brief, shot plan, copy, and prompt pack; do not substitute a programmatic image compositor or a different image generator for the final raster assets. Existing captures and approved exports may be copied unchanged for documentation or handoff.
+
 ## Install
 
 ### Codex
@@ -84,4 +98,4 @@ The validator checks the skill frontmatter, required metadata, referenced files,
 
 ## License
 
-MIT
+The source code and planning-document templates are MIT licensed. Raster files under `examples/minicalog/` are excluded from the MIT grant and are provided only for workflow documentation; see the [example asset notice](./examples/minicalog/ASSET-NOTICE.md).
