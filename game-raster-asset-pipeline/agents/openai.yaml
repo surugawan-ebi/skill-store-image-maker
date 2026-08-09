@@ -1,0 +1,4 @@
+interface:
+  display_name: "Game Raster Asset Pipeline"
+  short_description: "Generate and quality-check game raster assets"
+  default_prompt: "Use $game-raster-asset-pipeline to generate and validate a game raster asset from my references."

@@ -9,3 +9,9 @@
 - 実質的な変更では、可能かつ安全ならCodexへ独立レビューを依頼し、結果を自身でも検証する。
 - pushだけの依頼へ無断でPRを追加せず、commit、push、PR、release、deployは明示された範囲だけ実行する。
 <!-- END managed:initialize-managed-repo:claude -->
+
+<!-- BEGIN managed:github-access-policy-bridge:v1 -->
+## GitHub access bridge
+
+GitHubのclone／fetch／pull／push、PR操作、認証fallbackでは、`AGENTS.md`の「GitHubアクセスの標準経路」を必ず適用する。Claude CodeでもGit transportはSSH、PR操作は認証済み`gh`を標準とし、connector失敗時にHTTPS credentialを場当たり的に変更しない。
+<!-- END managed:github-access-policy-bridge:v1 -->

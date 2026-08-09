@@ -9,27 +9,47 @@ from pathlib import Path
 
 
 ALLOWED_FRONTMATTER_KEYS = {"name", "description"}
-REQUIRED_REFERENCES = [
-    "references/input-brief-template.md",
-    "references/store-asset-specs.md",
-    "references/design-playbook.md",
-    "references/project-workflow.md",
-]
-REQUIRED_TEMPLATE_FILES = [
-    "assets/project-template/materials/brief.md",
-    "assets/project-template/materials/asset-inventory.md",
-    "assets/project-template/working/shot-plan.md",
-    "assets/project-template/working/copy-bank.md",
-    "assets/project-template/working/prompt-pack.md",
-    "assets/project-template/working/qa-notes.md",
-    "assets/project-template/exports/manifest.md",
-]
-EXPECTED_TERMS = [
-    "Instagram",
-    "1080x1350",
-    "1080x1920",
-    "contain-on-canvas",
-]
+SKILL_PROFILES = {
+    "game-store-image-maker": {
+        "references": [
+            "references/input-brief-template.md",
+            "references/store-asset-specs.md",
+            "references/design-playbook.md",
+            "references/project-workflow.md",
+        ],
+        "files": [
+            "assets/project-template/materials/brief.md",
+            "assets/project-template/materials/asset-inventory.md",
+            "assets/project-template/working/shot-plan.md",
+            "assets/project-template/working/copy-bank.md",
+            "assets/project-template/working/prompt-pack.md",
+            "assets/project-template/working/qa-notes.md",
+            "assets/project-template/exports/manifest.md",
+        ],
+        "terms": ["Instagram", "1080x1350", "1080x1920", "contain-on-canvas"],
+    },
+    "game-raster-asset-pipeline": {
+        "references": [
+            "references/job-manifest.md",
+            "references/imagegen-and-visual-qa.md",
+            "references/registry-and-regeneration.md",
+        ],
+        "files": [
+            "scripts/inspect_raster.py",
+            "assets/project-template/raster-jobs.json",
+            "assets/project-template/imagegen-assets.json",
+        ],
+        "terms": [
+            "ImageGen",
+            "view_image",
+            "regenerate",
+            "transparent_gutter",
+            "occupancy_mode",
+            "background_color",
+            "app_icon",
+        ],
+    },
+}
 
 
 def parse_simple_frontmatter(text: str) -> dict[str, str]:
@@ -85,23 +105,28 @@ def validate_skill(skill_dir: Path) -> list[str]:
     if "TODO" in text or "[TODO" in text:
         errors.append("SKILL.md still contains TODO markers")
 
-    for relative_path in REQUIRED_REFERENCES:
+    profile = SKILL_PROFILES.get(name)
+    if profile is None:
+        errors.append(f"No repository validation profile for skill: {name}")
+        profile = {"references": [], "files": [], "terms": []}
+
+    for relative_path in profile["references"]:
         if not (skill_dir / relative_path).exists():
             errors.append(f"Missing reference file: {relative_path}")
         elif relative_path not in text:
             errors.append(f"SKILL.md does not mention reference: {relative_path}")
 
-    for relative_path in REQUIRED_TEMPLATE_FILES:
+    for relative_path in profile["files"]:
         if not (skill_dir / relative_path).exists():
-            errors.append(f"Missing project template file: {relative_path}")
+            errors.append(f"Missing required skill file: {relative_path}")
 
     combined_text = text + "\n"
-    for relative_path in REQUIRED_REFERENCES:
+    for relative_path in profile["references"]:
         reference_file = skill_dir / relative_path
         if reference_file.exists():
             combined_text += reference_file.read_text(encoding="utf-8") + "\n"
 
-    for term in EXPECTED_TERMS:
+    for term in profile["terms"]:
         if term not in combined_text:
             errors.append(f"Expected skill guidance to mention: {term}")
 
@@ -109,8 +134,8 @@ def validate_skill(skill_dir: Path) -> list[str]:
         errors.append("Missing agents/openai.yaml")
     else:
         openai_text = openai_yaml.read_text(encoding="utf-8")
-        if "$game-store-image-maker" not in openai_text:
-            errors.append("agents/openai.yaml default prompt should mention $game-store-image-maker")
+        if f"${name}" not in openai_text:
+            errors.append(f"agents/openai.yaml default prompt should mention ${name}")
 
     return errors
 
