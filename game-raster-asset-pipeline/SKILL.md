@@ -16,6 +16,28 @@ Generate final raster pixels only with ImageGen, then validate without changing 
 - Stop at the manifest and prompt when ImageGen is unavailable or cannot receive every required reference. Do not create a placeholder raster.
 - Do not use this skill for App Store, Google Play, or social marketing images; use `game-store-image-maker`. For a game screen, HUD, or menu contract, use Game Screen Foundry first and invoke this skill only for its individual raster jobs.
 
+## Mandatory Creative Direction Gate
+
+Before writing a raster job or calling ImageGen, require an approved creative direction for
+the target game/asset family. Use `creative/creative-direction.md` or the project’s explicitly
+named equivalent as the source of truth. A request that only says “make an asset” is not a
+direction.
+
+The brief must cover the asset purpose and audience, mood/style keywords, palette anchors and
+avoid colors, shape/material/lighting language, camera/view and composition, references (or
+explicit `none`), and must-have / must-not-have constraints. Keep unknown platform, pixel
+size, or runtime details as `TBD`; do not infer them from the genre or filename.
+
+- If the brief is absent, incomplete, or not marked approved, stop before job creation,
+  ImageGen, PNG output, adoption, or regeneration. Inspecting inputs and drafting the brief is
+  allowed, but visual production is not.
+- If existing adopted assets or a supplied reference imply a direction, present that as a
+  proposed summary and ask the user to confirm it; do not silently promote inference to an
+  approved direction. After confirmation, record the brief and reference it in the job notes
+  and registry entry.
+- Every retry must preserve the approved direction unless the user explicitly approves a new
+  direction. A failed QA result is not permission to improvise a new style.
+
 ## Run the workflow
 
 1. Read repository instructions and inventory any supplied source images. Inspect every supplied local reference with `view_image` at original detail before writing the job. Allow `references: []` for a genuinely text-only job; if the user requires fidelity to a specific source, do not silently downgrade it to text-only when that source is missing.
