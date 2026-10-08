@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "project": "example-game",
+  "assets": [
+    {
+      "asset_id": "hero-idle-sheet",
+      "kind": "sprite_sheet",
+      "references": [
+        "references/hero-design.png"
+      ],
+      "prompt_file": "prompts/hero-idle-sheet.md",
+      "output_path": "generated-assets/hero-idle-sheet.png",
+      "generator": "ImageGen",
+      "generator_label": "record-the-available-non-secret-label",
+      "generated_at": "YYYY-MM-DDThh:mm:ssZ",
+      "sha256": "record-after-generation",
+      "installed_path": null,
+      "installed_sha256": null,
+      "width": 256,
+      "height": 128,
+      "deterministic_qa": {
+        "status": "pending",
+        "issues": []
+      },
+      "visual_qa": {
+        "status": "pending",
+        "notes": ""
+      },
+      "decision": "candidate",
+      "supersedes": null
+    }
+  ]
+}

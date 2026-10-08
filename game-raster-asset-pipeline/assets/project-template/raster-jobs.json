@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "project": "example-game",
+  "assets": [
+    {
+      "id": "hero-idle-sheet",
+      "kind": "sprite_sheet",
+      "references": [
+        "references/hero-design.png"
+      ],
+      "prompt_file": "prompts/hero-idle-sheet.md",
+      "output": {
+        "path": "generated-assets/hero-idle-sheet.png",
+        "format": "png",
+        "width": 256,
+        "height": 128
+      },
+      "transparency": "forbidden",
+      "palette": {
+        "colors": [
+          "#172038",
+          "#F2D27A",
+          "#FFFFFF"
+        ],
+        "tolerance": 0,
+        "alpha_threshold": 0,
+        "max_out_of_palette_fraction": 0.0
+      },
+      "grid": {
+        "occupancy_mode": "background_color",
+        "background_color": "#FFFFFF",
+        "background_tolerance": 0,
+        "columns": 4,
+        "rows": 2,
+        "cell_width": 64,
+        "cell_height": 64,
+        "origin_x": 0,
+        "origin_y": 0,
+        "stride_x": 64,
+        "stride_y": 64,
+        "occupied_cells": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "min_occupied_pixels": 24,
+        "unexpected_cell_max_pixels": 0,
+        "transparent_gutter": 1
+      }
+    }
+  ]
+}
